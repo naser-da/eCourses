@@ -200,7 +200,7 @@ a {
 }
 
 a:hover {
-  color: #c221a9;
+  color: #007bff;
   text-decoration: none;
 }
 
@@ -2362,15 +2362,15 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #ffffff;
-  background-color: #e14eca;
-  border-color: #e14eca;
+  background-color: #3B66E9;
+  border-color: #3B66E9;
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .btn-primary:hover {
   color: #ffffff;
-  background-color: #db2dc0;
-  border-color: #d725bb;
+  background-color: #3B66E9;
+  border-color: #3B66E9;
 }
 
 .btn-primary:focus,
@@ -2381,22 +2381,22 @@ fieldset:disabled a.btn {
 .btn-primary.disabled,
 .btn-primary:disabled {
   color: #ffffff;
-  background-color: #e14eca;
-  border-color: #e14eca;
+  background-color: #3B66E9;
+  border-color: #3B66E9;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
 .show>.btn-primary.dropdown-toggle {
   color: #ffffff;
-  background-color: #d725bb;
-  border-color: #cd23b2;
+  background-color: #3B66E9;
+  border-color: #3B66E9;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show>.btn-primary.dropdown-toggle:focus {
-  box-shadow: none, 0 0 0 0 rgba(225, 78, 202, 0.5);
+  box-shadow: none, 0 0 0 0 #3B66E9;
 }
 
 .btn-secondary {
@@ -4693,7 +4693,7 @@ input[type="button"].btn-block {
 
 .navbar-light .navbar-text a:hover,
 .navbar-light .navbar-text a:focus {
-  color: rgba(34, 42, 66, 0.9);
+  color: #007bff;
 }
 
 .navbar-dark .navbar-brand {
@@ -4744,7 +4744,7 @@ input[type="button"].btn-block {
 
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
-  color: rgba(255, 255, 255, 0.65);
+  color: #007bff;
 }
 
 .card {
@@ -6611,7 +6611,7 @@ a.bg-primary:hover,
 a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #d725bb !important;
+  background-color: #007bff !important;
 }
 
 .bg-secondary {
@@ -10070,12 +10070,12 @@ button.bg-darker:focus {
 }
 
 .text-primary {
-  color: #e14eca !important;
+  color: #3B66E9 !important;
 }
 
 a.text-primary:hover,
 a.text-primary:focus {
-  color: #d725bb !important;
+  color: #007bff !important;
 }
 
 .text-secondary {
@@ -10695,14 +10695,14 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 }
 
 .btn-primary {
-  background: #e14eca;
-  background-image: -webkit-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
-  background-image: -o-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
-  background-image: -moz-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
-  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca);
+  background: #3B66E9;
+  background-image: -webkit-linear-gradient(to bottom left, #3B66E9, #3B66E9, #3B66E9);
+  background-image: -o-linear-gradient(to bottom left, #3B66E9, #3B66E9, #3B66E9);
+  background-image: -moz-linear-gradient(to bottom left, #3B66E9, #3B66E9, #3B66E9);
+  background-image: linear-gradient(to bottom left, #3B66E9, #3B66E9, #3B66E9);
   background-size: 210% 210%;
   background-position: top right;
-  background-color: #e14eca;
+  background-color: #3B66E9;
   transition: all 0.15s ease;
   box-shadow: none;
   color: #ffffff;
@@ -10721,11 +10721,11 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .btn-primary:active:hover,
 .btn-primary.active:focus,
 .btn-primary.active:hover {
-  background-color: #ba54f5 !important;
-  background-image: linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca) !important;
-  background-image: -webkit-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca) !important;
-  background-image: -o-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca) !important;
-  background-image: -moz-linear-gradient(to bottom left, #e14eca, #ba54f5, #e14eca) !important;
+  background-color: #003fff !important;
+  background-image: linear-gradient(to bottom left, #003fff, #003fff, #003fff) !important;
+  background-image: -webkit-linear-gradient(to bottom left, #003fff, #003fff, #003fff) !important;
+  background-image: -o-linear-gradient(to bottom left, #003fff, #003fff, #003fff) !important;
+  background-image: -moz-linear-gradient(to bottom left, #003fff, #003fff, #003fff) !important;
   color: #ffffff;
   box-shadow: none;
 }
@@ -10788,7 +10788,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-primary.btn-simple.active {
-  border-color: #e14eca !important;
+  border-color: #3B66E9 !important;
 }
 
 .btn-primary.btn-simple.active:hover,
@@ -12417,16 +12417,16 @@ fieldset[disabled] .btn-link.active {
 
 .has-success.form-check .form-check-label,
 .has-danger.form-check .form-check-label {
-  color: #00f2c3;
+  color: #007bff;
 }
 
 .has-danger:after {
   content: "\ea48";
-  color: #ec250d;
+  color: #007bff;
 }
 
 .has-danger.form-check .form-check-label {
-  color: #ec250d;
+  color: #007bff;
 }
 
 img {
@@ -14016,7 +14016,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #e14eca;
+  color: #007bff;
 }
 
 h1,
@@ -14087,7 +14087,7 @@ p.description {
 }
 
 .title.title-up a {
-  color: #222a42;
+  color: #007bff;
   text-decoration: none;
 }
 
@@ -14414,7 +14414,7 @@ table.tablesorter thead tr .headerSortDown {
 .form-check input[type="checkbox"]:checked+.form-check-sign::before,
 .form-check input[type="checkbox"]:checked+.form-check-sign::before {
   border: none;
-  background-color: #e14eca;
+  background-color: #007bff;
 }
 
 .form-check .form-check-sign::after {
@@ -14432,7 +14432,7 @@ table.tablesorter thead tr .headerSortDown {
 
 .form-check.disabled .form-check-label,
 .form-check.disabled .form-check-label {
-  color: #9A9A9A;
+  color: #007bff;
   opacity: .5;
   cursor: not-allowed;
 }
@@ -14476,7 +14476,7 @@ table.tablesorter thead tr .headerSortDown {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  border: 1px solid #818181;
+  border: 1px solid #007bff;
   display: inline-block;
   position: absolute;
   left: 0px;
@@ -14497,15 +14497,15 @@ table.tablesorter thead tr .headerSortDown {
 .form-check-radio input[type="radio"]:checked+.form-check-sign::after {
   width: 6px;
   height: 6px;
-  background-color: #e14eca;
-  border-color: #e14eca;
+  background-color: #007bff;
+  border-color: #007bff;
   top: 9px;
   left: 6px;
   opacity: 1;
 }
 
 .form-check-radio input[type="radio"]:checked+.form-check-sign::before {
-  border-color: #e14eca;
+  border-color: #007bff;
 }
 
 .form-check-radio input[type="radio"]:checked+.form-check-sign::after {
@@ -14513,12 +14513,12 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .form-check-radio input[type="radio"]:disabled+.form-check-sign {
-  color: #9A9A9A;
+  color: #007bff;
 }
 
 .form-check-radio input[type="radio"]:disabled+.form-check-sign::before,
 .form-check-radio input[type="radio"]:disabled+.form-check-sign::after {
-  color: #9A9A9A;
+  color: #007bff;
 }
 
 .fixed-plugin {
@@ -17276,7 +17276,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card .card-body .card-title {
-  color: #ffffff;
+  color: #003fff;
   text-transform: inherit;
   font-weight: 300;
   margin-bottom: .75rem;
@@ -17298,7 +17298,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card .card-header .card-title {
-  color: #ffffff;
+  color: #003fff;
   font-weight: 100;
 }
 
@@ -17832,7 +17832,7 @@ Copyright (c) 2015 Daniel Eden
 }
 
 .card-register.card-white .card-header .card-title {
-  color: #ffffff;
+  color: #003fff;
 }
 
 .card-register .card-header .card-title {
@@ -17841,7 +17841,8 @@ Copyright (c) 2015 Daniel Eden
   font-weight: 900;
   color: #222a42;
   text-transform: lowercase;
-  margin-left: -5px;
+  margin-left: 25px;
+  margin-top: 20px;
   z-index: 1;
 }
 
