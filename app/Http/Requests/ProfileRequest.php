@@ -28,6 +28,12 @@ class ProfileRequest extends FormRequest
         return [
             'name' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique((new User)->getTable())->ignore(auth()->id())],
+            'occupation' => ['min:3', 'nullable'],
+            'pfp' => ['mimes:jpg,gif,svg, nullable'],
+            'bio' => ['min:20', 'nullable'],
+            'facebook' => ['nullable'],
+            'twitter' => ['nullable'],
+            'linkedin' => ['nullable']
         ];
     }
 }

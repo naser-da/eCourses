@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\PasswordRequest;
+use Illuminate\Support\Facades\Request;
 
 class ProfileController extends Controller
 {
@@ -26,7 +27,18 @@ class ProfileController extends Controller
      */
     public function update(ProfileRequest $request)
     {
-        auth()->user()->update($request->all());
+        $input = $request->all();
+
+        if ($request->hasFile('pfp')) {
+            $file = $request->file('pfp');
+            $file_extension = $file->getClientOriginalName();
+            $destination_path = public_path() . '/imgs';
+            $filename = $file_extension;
+            $request->file('pfp')->move($destination_path, $filename);
+            $input['pfp'] = $filename;
+        }
+
+        auth()->user()->update($input);
 
         return back()->withStatus(__('Profile successfully updated.'));
     }

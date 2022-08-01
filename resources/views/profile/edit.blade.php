@@ -7,12 +7,20 @@
                 <div class="card-header">
                     <h5 class="title">{{ __('Edit Profile') }}</h5>
                 </div>
-                <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
+                <form method="post" action="{{ route('profile.update') }}" autocomplete="off" enctype="multipart/form-data">
                     <div class="card-body">
                             @csrf
                             @method('put')
 
                             @include('alerts.success')
+                            
+                            <div class="form-group{{ $errors->has('pfp') ? ' has-danger' : '' }}">
+                                <label>{{ __('Profile Picture') }}</label>
+                                <input type="file" name="pfp" class="form-control-file{{ $errors->has('pfp') ? ' is-invalid' : '' }}">
+                                @include('alerts.feedback', ['field' => 'pfp'])
+                                <br>
+                                <img width="100px" height="100px" src="{{asset('/imgs/'. auth()->user()->pfp)}}" alt="{{auth()->user()->name . "'s profile picture"}}">
+                            </div>
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <label>{{ __('Name') }}</label>
@@ -25,6 +33,37 @@
                                 <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ old('email', auth()->user()->email) }}">
                                 @include('alerts.feedback', ['field' => 'email'])
                             </div>
+
+                            <div class="form-group{{ $errors->has('occupation') ? ' has-danger' : '' }}">
+                                <label>{{ __('Occupation') }}</label>
+                                <input type="text" name="occupation" class="form-control{{ $errors->has('occupation') ? ' is-invalid' : '' }}" placeholder="{{ __('What do you do for a living?') }}" value="{{ old('occupation', auth()->user()->occupation) }}">
+                                @include('alerts.feedback', ['field' => 'occupation'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('bio') ? ' has-danger' : '' }}">
+                                <label>{{ __('Bio') }}</label>
+                                <textarea type="text" name="bio" class="form-control{{ $errors->has('bio') ? ' is-invalid' : '' }}" placeholder="{{ __('Tell us about yourself!') }}">{{ auth()->user()->bio }}</textarea>
+                                @include('alerts.feedback', ['field' => 'bio'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('facebook') ? ' has-danger' : '' }}">
+                                <label>{{ __('Facebook') }}</label>
+                                <input type="text" name="facebook" class="form-control{{ $errors->has('facebook') ? ' is-invalid' : '' }}" placeholder="{{ __('Your facebook account ID here') }}" value="{{ old('facebook', auth()->user()->facebook) }}">
+                                @include('alerts.feedback', ['field' => 'facebook'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('twitter') ? ' has-danger' : '' }}">
+                                <label>{{ __('Twitter') }}</label>
+                                <input type="text" name="twitter" class="form-control{{ $errors->has('twitter') ? ' is-invalid' : '' }}" placeholder="{{ __('Your twitter account ID here') }}" value="{{ old('twitter', auth()->user()->twitter) }}">
+                                @include('alerts.feedback', ['field' => 'twitter'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('linkedin') ? ' has-danger' : '' }}">
+                                <label>{{ __('LinkedIn') }}</label>
+                                <input type="text" name="linkedin" class="form-control{{ $errors->has('linkedin') ? ' is-invalid' : '' }}" placeholder="{{ __('Your linkedin account ID here') }}" value="{{ old('linkedin', auth()->user()->linkedin) }}">
+                                @include('alerts.feedback', ['field' => 'linkedin'])
+                            </div>
+
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-fill btn-primary">{{ __('Save') }}</button>
@@ -75,28 +114,28 @@
                             <div class="block block-three"></div>
                             <div class="block block-four"></div>
                             <a href="#">
-                                <img class="avatar" src="{{ asset('black') }}/img/emilyz.jpg" alt="">
+                                <img class="avatar" src="{{asset('/imgs/'. auth()->user()->pfp)}}" alt="">
                                 <h5 class="title">{{ auth()->user()->name }}</h5>
                             </a>
                             <p class="description">
-                                {{ __('Ceo/Co-Founder') }}
+                                {{ auth()->user()->occupation }}
                             </p>
                         </div>
                     </p>
                     <div class="card-description">
-                        {{ __('Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...') }}
+                        {{auth()->user()->bio}}
                     </div>
                 </div>
                 <div class="card-footer">
                     <div class="button-container">
                         <button class="btn btn-icon btn-round btn-facebook">
-                            <i class="fab fa-facebook"></i>
+                            <a class="fab fa-facebook" href="https://www.facebook.com/{{auth()->user()->facebook}}" target=”_blank”></a>
                         </button>
                         <button class="btn btn-icon btn-round btn-twitter">
-                            <i class="fab fa-twitter"></i>
+                            <a class="fab fa-twitter" href="https://www.twitter.com/{{auth()->user()->twitter}}" target=”_blank”></a>
                         </button>
-                        <button class="btn btn-icon btn-round btn-google">
-                            <i class="fab fa-google-plus"></i>
+                        <button class="btn btn-icon btn-round btn-linkedin">
+                            <a class="fab fa-linkedin" href="https://www.linkedin.com/in/{{auth()->user()->linkedin}}" target=”_blank”></a>
                         </button>
                     </div>
                 </div>
