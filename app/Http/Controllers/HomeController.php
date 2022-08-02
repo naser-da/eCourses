@@ -28,6 +28,7 @@ class HomeController extends Controller
 
     public function homepage()
     {
-        return view('home');
+        $courses = auth()->user()->courses()->get();
+        return view('home')->with(compact('courses'));
     }
 }
