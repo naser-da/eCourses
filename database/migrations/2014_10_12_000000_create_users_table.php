@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('pfp')->nullable();
+            $table->string('pfp')->nullable()->default('default-avatar.png');
             $table->string('email')->unique();
             $table->string('twitter')->nullable();
             $table->string('facebook')->nullable();

@@ -2,7 +2,9 @@
 
 @section('content')
 
-
+{{-- This page shows for registered user as a homepage --}}
+    <a href="{{route('course.add')}}" class="btn btn-primary">Add a Course</a>
+    
     <div class="header py-7 py-lg-8">
         <div class="container">
             <div class="header-body text-center mb-7">
@@ -21,6 +23,7 @@
         </div>
         
         
+        {{-- @endauth() --}}
 
         <div class="card mt-5" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">

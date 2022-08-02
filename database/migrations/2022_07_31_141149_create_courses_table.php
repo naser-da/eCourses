@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->text('description');
-            $table->string('thumbnail');
-            $table->boolean('activated');
+            $table->string('thumbnail')->default('placeholder.jpg');
+            $table->boolean('activated')->default(false);
             $table->integer('n_weeks');
             $table->string('tutor');
             $table->timestamps();

@@ -19,8 +19,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
+    public function welcome()
     {
         return view('welcome');
+    }
+
+    public function homepage()
+    {
+        return view('home');
     }
 }
