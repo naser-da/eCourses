@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'welcome', 'uses' => 'App\Http\Controllers\HomeController@welcome']);
 
 Auth::routes();
 
@@ -40,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 	Route::get('addCourse', [App\Http\Controllers\CourseController::class, 'create'])->name('course.add');
+	Route::put('submitCourse', [App\Http\Controllers\CourseController::class, 'submit'])->name('course.add');
 	Route::get('/home', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home');
 });
 

@@ -2,7 +2,9 @@
 
 @section('content')
 
-
+@auth
+<a href="{{route('course.add')}}" class="btn btn-primary">Add a Course</a>
+@endauth
     <div class="header py-7 py-lg-8">
         <div class="container">
             <div class="header-body text-center mb-7">
@@ -21,15 +23,22 @@
         </div>
         
         
+    <div class="card-deck">
+    @foreach ($courses as $course)
 
-        <div class="card mt-5" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-md-4">
+            <div class="card md-4" style="width: 18rem;">
+                <img src="{{asset('imgs/courses/'.$course->thumbnail)}}" class="card-img-top" alt="{{$course->name . "thumbnail"}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{$course->title}} • By {{$course->tutor}}</h5> 
+                    <p class="card-text">{{$course->subtitle}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
             </div>
         </div>
+        
+        @endforeach
+    </div>
 
     @endsection
     

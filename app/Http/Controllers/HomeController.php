@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Course;
 
 class HomeController extends Controller
 {
@@ -21,7 +22,8 @@ class HomeController extends Controller
      */
     public function welcome()
     {
-        return view('welcome');
+        $courses = Course::all();
+        return view('welcome')->with(compact('courses'));;
     }
 
     public function homepage()
