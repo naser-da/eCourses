@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', ['as' => 'welcome', 'uses' => 'App\Http\Controllers\HomeController@welcome']);
-
+Route::get('/home', ['as' => 'welcome', 'uses' => 'App\Http\Controllers\HomeController@welcome']);
 Auth::routes();
 
 Auth::routes();
@@ -36,8 +36,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+	Route::put('submitCourse', [App\Http\Controllers\CourseController::class, 'submit'])->name('course.submit');
 	Route::get('addCourse', [App\Http\Controllers\CourseController::class, 'create'])->name('course.add');
-	Route::put('submitCourse', [App\Http\Controllers\CourseController::class, 'submit'])->name('course.add');
 	Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home');
 });
 

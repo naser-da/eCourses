@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Course;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class HomeController extends Controller
 {
@@ -20,10 +22,17 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function welcome()
+    public function welcome(Request $request)
     {
+        
+        $ip = $request->ip();
+        $res = Http::get('http://ipinfo.io/'.$ip.'?token=7d558664b06ca5');
+
+        $city = $res['city'];
+        $country = $res['country'];
+
         $courses = Course::all();
-        return view('welcome')->with(compact('courses'));;
+        return view('welcome')->with(compact('courses', 'city', 'country'));;
     }
 
     public function homepage()
