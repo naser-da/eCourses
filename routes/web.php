@@ -19,6 +19,9 @@ Auth::routes();
 
 Auth::routes();
 
+Route::get('auth/google', [App\Http\Controllers\Auth\GoogleController::Class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback', [App\Http\Controllers\Auth\GoogleController::Class, 'handleGoogleCallback']);
+
 
 
 Route::group(['middleware' => 'auth'], function () {
@@ -39,5 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('submitCourse', [App\Http\Controllers\CourseController::class, 'submit'])->name('course.submit');
 	Route::get('addCourse', [App\Http\Controllers\CourseController::class, 'create'])->name('course.add');
 	Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home');
+	Route::get('/user/{username}', [App\Http\Controllers\UserController::class, 'show'])->name('profile.show');
+	Route::get('/users', [App\Http\Controllers\UserController::class, 'show_all'])->name('profile.show.all');
 });
 

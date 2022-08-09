@@ -26,13 +26,13 @@ class HomeController extends Controller
     {
         
         $ip = $request->ip();
-        $res = Http::get('http://ipinfo.io/'.$ip.'?token=7d558664b06ca5');
+        // $res = Http::get('http://ipinfo.io/'.$ip.'?token=7d558664b06ca5');
 
-        $city = $res['city'];
-        $country = $res['country'];
+        // $city = $res['city'];
+        // $country = $res['country'];
 
         $courses = Course::all();
-        return view('welcome')->with(compact('courses', 'city', 'country'));;
+        return view('welcome')->with(compact('courses'));;
     }
 
     public function homepage()

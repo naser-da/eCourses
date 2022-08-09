@@ -18,4 +18,15 @@ class UserController extends Controller
     {
         return view('users.index', ['users' => $model->paginate(15)]);
     }
+
+    public function show($username)
+    {
+
+        return view('profile.show', ['user' => User::where('username', $username)->first()]);
+    }
+
+    public function show_all()
+    {
+        return view('profile.showall', ['users' => User::all()]);
+    }
 }

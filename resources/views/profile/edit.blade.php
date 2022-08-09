@@ -22,6 +22,12 @@
                                 <img width="100px" height="100px" src="{{asset('/imgs/'. auth()->user()->pfp)}}" alt="{{auth()->user()->name . "'s profile picture"}}">
                             </div>
 
+                            <div class="form-group{{ $errors->has('username') ? ' has-danger' : '' }}">
+                                <label>{{ __('Username') }}</label>
+                                <input type="text" name="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" value="{{auth()->user()->username}}" value="{{ old('username', auth()->user()->username) }}" disabled>
+                                @include('alerts.feedback', ['field' => 'username'])
+                            </div>
+
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <label>{{ __('Name') }}</label>
                                 <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}">

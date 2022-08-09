@@ -7,16 +7,31 @@
         <ul class="nav">
             <li @if (Request::path() == 'dashboard') class="active " @endif>
                 <a href="{{ route('home') }}">
-                    <i class="tim-icons icon-chart-pie-36"></i>
-                    <p>{{ __('Dashboard') }}</p>
+                    <i class="tim-icons icon-components"></i>
+                    <p>{{ __('Courses') }}</p>
                 </a>
             </li>
             <li @if (Request::path() == 'profile') class="active " @endif>
                 <a href="{{ route('profile.edit')  }}">
-                    <i class="tim-icons icon-single-02"></i>
-                    <p>{{ __('User Profile') }}</p>
+                    <i class="tim-icons icon-pencil"></i>
+                    <p>{{ __('Edit Profile') }}</p>
                 </a>
             </li>
+
+            <li @if (Request::path() == "user/".auth()->user()->username) class="active " @endif>
+                <a href="{{ route('profile.show', ['username'=>auth()->user()->username])  }}">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>{{ __('View Profile') }}</p>
+                </a>
+            </li>
+
+            <li @if (Request::path() == "users") class="active " @endif>
+                <a href="{{ route('profile.show.all')  }}">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>{{ __('Users') }}</p>
+                </a>
+            </li>
+            
             {{-- <li @if (Request::path() == 'users') class="active " @endif>
                 <a href="{{ route('user.index')  }}">
                     <i class="tim-icons icon-bullet-list-67"></i>
