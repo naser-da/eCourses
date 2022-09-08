@@ -14,7 +14,6 @@
                     <h1 class="card-title">{{ __('Login') }}</h1>
                 </div>
                 <div class="card-body">
-                    <p class="text-dark mb-2">Sign in with <strong>admin@eCourses.com</strong> and the password <strong>secret123</strong></p>
                     <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                         <div class="input-group-prepend">
                             <div class="input-group-text">

@@ -41,6 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 	Route::put('submitCourse', [App\Http\Controllers\CourseController::class, 'submit'])->name('course.submit');
 	Route::get('addCourse', [App\Http\Controllers\CourseController::class, 'create'])->name('course.add');
+	Route::get('course/{id}', [App\Http\Controllers\CourseController::class, 'view'])->name('course.view');
 	Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home');
 	Route::get('/user/{username}', [App\Http\Controllers\UserController::class, 'show'])->name('profile.show');
 	Route::get('/users', [App\Http\Controllers\UserController::class, 'show_all'])->name('profile.show.all');

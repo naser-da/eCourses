@@ -31,13 +31,12 @@ class HomeController extends Controller
         // $city = $res['city'];
         // $country = $res['country'];
 
-        $courses = Course::all();
+        $courses = Course::where('activated', false)->take(9)->get();
         return view('welcome')->with(compact('courses'));;
     }
 
     public function homepage()
     {
-        $courses = auth()->user()->courses()->get();
-        return view('home')->with(compact('courses'));
+        return view('home');
     }
 }

@@ -22,7 +22,6 @@ return new class extends Migration
             $table->string('thumbnail')->default('placeholder.jpg');
             $table->boolean('activated')->default(false);
             $table->integer('n_weeks');
-            $table->string('tutor');
             $table->timestamps();
         });
     }

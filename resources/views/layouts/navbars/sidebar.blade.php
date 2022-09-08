@@ -1,14 +1,14 @@
 <div class="sidebar">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="/" class="simple-text logo-mini">{{ __('eC') }}</a>
-            <a href="/" class="simple-text logo-normal">{{ __('eCourses') }}</a>
+            <a href="/" class="simple-text logo-mini">{{ __('RD') }}</a>
+            <a href="/" class="simple-text logo-normal">{{ __('Rdemy') }}</a>
         </div>
         <ul class="nav">
             <li @if (Request::path() == 'dashboard') class="active " @endif>
                 <a href="{{ route('home') }}">
                     <i class="tim-icons icon-components"></i>
-                    <p>{{ __('Courses') }}</p>
+                    <p>{{ __('My Courses') }}</p>
                 </a>
             </li>
             <li @if (Request::path() == 'profile') class="active " @endif>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CourseRequest;
+use App\Models\Course;
 
 class CourseController extends Controller
 {
@@ -29,4 +30,12 @@ class CourseController extends Controller
 
         return back()->withStatus(__('Course successfully submitted.'));
     }
+
+    public function view($id)
+    {
+        $course = Course::find($id);
+        return view('course.view', ['course' => $course]);
+    }
+
+
 }

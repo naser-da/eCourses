@@ -18,13 +18,11 @@ class CourseFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => User::factory(User::Class),
             'title' => $this->faker->sentence,
             'subtitle' => $this->faker->sentence,
             'thumbnail' => $this->faker->imageUrl('900', '300'),
             'description' => $this->faker->paragraph('10'),
             'n_weeks' => $this->faker->randomDigit,
-            'tutor' => $this->faker->name
         ];
     }
 }

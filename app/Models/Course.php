@@ -13,7 +13,6 @@ class Course extends Model
         'title',
         'subtitle',
         'description',
-        'tutor',
         'n_weeks',
         'thumbnail',
         'activated'

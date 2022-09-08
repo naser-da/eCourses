@@ -4,6 +4,8 @@ namespace Database\Seeders;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use App\Models\User;
+use App\Models\Course;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,6 +18,7 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             'id' => 1,
+            'username' => 'admin',
             'name' => 'Admin Admin',
             'email' => 'admin@black.com',
             'email_verified_at' => now(),
@@ -23,5 +26,10 @@ class UsersTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now()
         ]);
+
+        User::factory()
+        ->count(100)
+        ->has(Course::factory()->count(6))
+        ->create();
     }
 }

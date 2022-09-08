@@ -52,9 +52,9 @@
                         <div class="card md-4" style="width: 18rem;">
                             <img src="{{asset('imgs/courses/'.$course->thumbnail)}}" class="card-img-top" alt="{{$course->name . "thumbnail"}}">
                             <div class="card-body">
-                                <h5 class="card-title">{{$course->title}} • By <a href={{$user->username}}>{{$course->tutor}}</a></h5> 
+                                <h5 class="card-title"><a href={{route('course.view', [$course->id, 'id'])}}>{{$course->title}}</a> • By <a href={{$user->username}}>{{$course->tutor}}</a></h5> 
                                 <p class="card-text">{{$course->subtitle}}</p>
-                                <a href="#" class="btn btn-primary mt-3">Details</a>
+                                <a href="#" class="btn btn-primary mt-3">Enroll</a>
                             </div>
                         </div>
                     </div>

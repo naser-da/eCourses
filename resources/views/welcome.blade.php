@@ -32,15 +32,17 @@
             <div class="card md-5 mt-5" style="width: 18rem;">
                 <img src="{{asset('imgs/courses/'.$course->thumbnail)}}" class="card-img-top" alt="{{$course->name . "thumbnail"}}">
                 <div class="card-body">
-                    <h5 class="card-title">{{$course->title}} • By <a href = {{"user/".$course->user->username}}>{{$course->tutor}}</a></h5> 
+                    <h5 class="card-title"><a href={{"course/".$course->id}}>{{$course->title}}</a> • By <a href = {{"user/".$course->user->username}}>{{$course->user->username}}</a></h5> 
                     <p class="card-text">{{$course->subtitle}}</p>
-                    <a href="#" class="btn btn-primary">Details</a>
+                    <a href="#" class="btn btn-primary">Enroll</a>
                 </div>
             </div>
         </div>
         
         @endforeach
     </div>
+
+
 
     @endsection
     
